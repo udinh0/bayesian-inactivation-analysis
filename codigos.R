@@ -11,6 +11,7 @@ library(bayesplot)
 # Configuração do Stan
 options(mc.cores = parallel::detectCores())
 rstan_options(auto_write = TRUE)
+set.seed(175072)
 
 # ============================================
 # 1. CARREGAR DADOS REAIS
@@ -49,7 +50,7 @@ parameters {
 }
 
 model {
-  // Priors (não especificados no código original, usando uniform implícito)
+  // Priors (uniforme)
   
   // Likelihood para medições iniciais (t=0)
   for (m in 1:M) {
