@@ -113,8 +113,6 @@ fit <- stan(
 
 cat("\n✓ Modelo ajustado com sucesso!\n\n")
 
-summary(fit)$summary
-
 # ============================================
 # 5. DIAGNÓSTICOS DE CONVERGÊNCIA
 # ============================================
@@ -141,7 +139,7 @@ dev.off()
 
 # Correlação entre parâmetros
 png("output/parameter_pairs.png", width = 800, height = 800)
-mcmc_pairs(fit, pars = c("a", "b"))
+mcmc_pairs(fit, pars = c("a", "b", "n0"))
 dev.off()
 
 cat("✓ Gráficos de diagnóstico salvos em 'output/'\n")
