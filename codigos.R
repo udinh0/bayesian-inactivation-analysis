@@ -113,6 +113,8 @@ fit <- stan(
 
 cat("\n✓ Modelo ajustado com sucesso!\n\n")
 
+summary(fit)$summary
+
 # ============================================
 # 5. DIAGNÓSTICOS DE CONVERGÊNCIA
 # ============================================
